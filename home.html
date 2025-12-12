@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sistema de Competições</title>
     <style>
+        /* use seu CSS existente (copiei o estilo base para facilitar) */
         * {
             margin: 0;
             padding: 0;
@@ -28,7 +30,7 @@
             color: white;
             margin-bottom: 30px;
             font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .blocks-container {
@@ -42,7 +44,7 @@
             background: white;
             border-radius: 15px;
             padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
         }
 
@@ -69,7 +71,8 @@
             font-weight: 600;
         }
 
-        input, select {
+        input,
+        select {
             width: 100%;
             padding: 10px;
             border: 2px solid #e0e0e0;
@@ -78,7 +81,8 @@
             transition: border-color 0.3s ease;
         }
 
-        input:focus, select:focus {
+        input:focus,
+        select:focus {
             outline: none;
             border-color: #667eea;
         }
@@ -101,15 +105,11 @@
             transform: scale(1.05);
         }
 
-        button:active {
-            transform: scale(0.95);
-        }
-
         .list-section {
             background: white;
             border-radius: 15px;
             padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             margin-top: 20px;
         }
 
@@ -125,17 +125,6 @@
             margin-bottom: 10px;
             border-radius: 8px;
             border-left: 4px solid #667eea;
-        }
-
-        .list-item h3 {
-            color: #333;
-            margin-bottom: 5px;
-        }
-
-        .list-item p {
-            color: #666;
-            font-size: 14px;
-            margin: 3px 0;
         }
 
         .message {
@@ -172,98 +161,90 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>🏃‍♂️ Sistema de Gerenciamento de Competições</h1>
-        
+
         <div class="blocks-container">
-            <!-- Bloco 1: Cadastro de Competições -->
+            <!-- Cadastro de Competições -->
             <div class="block">
                 <h2>📋 Cadastrar Competição</h2>
-                <form id="formCompeticao">
-                    <div class="form-group">
-                        <label for="compTipo">Tipo:</label>
-                        <select id="compTipo" required>
-                            <option value="">Selecione...</option>
-                            <option value="maratona">Maratona</option>
-                            <option value="trail">Trail Running</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="compNome">Nome:</label>
-                        <input type="text" id="compNome" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="compData">Data:</label>
-                        <input type="date" id="compData" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="compLocal">Local:</label>
-                        <input type="text" id="compLocal" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="compDistancia">Distância (km):</label>
-                        <input type="number" id="compDistancia" step="0.1" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="compPontosAgua">Pontos Parada de Agua(KM)</label>
-                        <input type="number" id="compPontosAgua" step="0.1" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="compTipoTerreno">Tipo Terreno</label>
-                        <input type="text" id="compTipoTerreno" required>
-                    </div>
-                    <button type="button">Cadastrar Competição</button>
-                    <div id="msgCompeticao" class="message"></div>
-                    
-                </form>
-            </div> 
-            <!-- Bloco 2: Cadastro de Atletas -->
-            <div class="block">
-                <h2>👤 Cadastrar Atleta</h2>
-                <form id="formAtleta">
-                    <div class="form-group">
-                        <label for="atlNome">Nome:</label>
-                        <input type="text" id="atlNome" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="atlCpf">CPF:</label>
-                        <input type="text" id="atlCpf" placeholder="000.000.000-00" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="atlDataNasc">Data de Nascimento:</label>
-                        <input type="date" id="atlDataNasc" required>
-                    </div>
-                    <button type="submit">Cadastrar Atleta</button>
-                    <div id="msgAtleta" class="message"></div>
-                </form>
+                <div class="form-group">
+                    <label for="compTipo">Tipo:</label>
+                    <select id="compTipo" required>
+                        <option value="">Selecione...</option>
+                        <option value="maratona">Maratona</option>
+                        <option value="trail">Trail Running</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="compNome">Nome:</label>
+                    <input type="text" id="compNome" required />
+                </div>
+                <div class="form-group">
+                    <label for="compData">Data:</label>
+                    <input type="date" id="compData" required />
+                </div>
+                <div class="form-group">
+                    <label for="compLocal">Local:</label>
+                    <input type="text" id="compLocal" required />
+                </div>
+                <div class="form-group">
+                    <label for="compDistancia">Distância (km):</label>
+                    <input type="number" id="compDistancia" step="0.1" required />
+                </div>
+                <div class="form-group">
+                    <label for="compLocal">Paradas para Agua em (km):</label>
+                    <input type="text" id="paradasAgua" required />
+                </div>
+                <div class="form-group">
+                    <label for="compLocal">Tipo Terreno:</label>
+                    <input type="text" id="tipoTerreno" required />
+                </div>
+                <button id="btnCadastrarCompeticao" type="button">Cadastrar Competição</button>
+                <div id="msgCompeticao" class="message"></div>
             </div>
 
-            <!-- Bloco 3: Inscrição de Atleta -->
+            <!-- Cadastro de Atletas -->
+            <div class="block">
+                <h2>👤 Cadastrar Atleta</h2>
+                <div class="form-group">
+                    <label for="atlNome">Nome:</label>
+                    <input type="text" id="atlNome" required />
+                </div>
+                <div class="form-group">
+                    <label for="atlCpf">CPF:</label>
+                    <input type="text" id="atlCpf" placeholder="000.000.000-00" required />
+                </div>
+                <div class="form-group">
+                    <label for="atlDataNasc">Data de Nascimento:</label>
+                    <input type="date" id="atlDataNasc" required />
+                </div>
+                <button id="btnCadastrarAtleta" type="button">Cadastrar Atleta</button>
+                <div id="msgAtleta" class="message"></div>
+            </div>
+
+            <!-- Inscrição de Atleta -->
             <div class="block">
                 <h2>✍️ Inscrever Atleta</h2>
-                <form id="formInscricao">
-                    <div class="form-group">
-                        <label for="inscCompeticao">Competição:</label>
-                        <select id="inscCompeticao" required>
-                            <option value="">Selecione a competição...</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="inscAtleta">Atleta:</label>
-                        <select id="inscAtleta" required>
-                            <option value="">Selecione o atleta...</option>
-                        </select>
-                    </div>
-                    <button type="submit">Inscrever Atleta</button>
-                    <div id="msgInscricao" class="message"></div>
-                </form>
+                <div class="form-group">
+                    <label for="inscCompeticao">Competição:</label>
+                    <select id="inscCompeticao" required>
+                        <option value="">Selecione a competição...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inscAtleta">Atleta:</label>
+                    <select id="inscAtleta" required>
+                        <option value="">Selecione o atleta...</option>
+                    </select>
+                </div>
+                <button id="btnInscreverAtleta" type="button">Inscrever Atleta</button>
+                <div id="msgInscricao" class="message"></div>
             </div>
         </div>
 
-        <!-- Listas -->
         <div class="list-section">
             <h2>📊 Competições Cadastradas</h2>
             <div id="listaCompeticoes"></div>
@@ -274,3 +255,13 @@
             <div id="listaAtletas"></div>
         </div>
     </div>
+
+    <script type="module">
+        import { init } from './view.js';
+        window.addEventListener('load', function () {
+            init();
+        });
+    </script>
+</body>
+
+</html>

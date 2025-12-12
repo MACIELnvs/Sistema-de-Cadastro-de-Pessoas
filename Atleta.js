@@ -36,6 +36,6 @@ export class Atleta {
     }
 
     toString() {
-        return `Atleta: ${this.#nome}, CPF: ${this.#cpf}, Data Nascimento: ${this.#dataNascimento}`;
+        return "Atleta: " + this.#nome + ", CPF: " + this.#cpf + ", Data Nascimento: " + this.#dataNascimento;
     }
 }
